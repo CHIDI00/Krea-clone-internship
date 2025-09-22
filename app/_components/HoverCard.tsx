@@ -34,34 +34,34 @@ const HoverCard: React.FC<HoverProps> = ({ setIsHoveringHome }) => {
       }}
     >
       <div>
-        <h3 className="text-gray-500 font-semibold mb-3">Generate</h3>
+        <h3 className="mb-3 font-semibold text-gray-500">Generate</h3>
         <ul className="space-y-2">
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-slate-500 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white shadow-sm rounded-xl bg-gradient-to-b from-slate-500 via-gray-400 to-white">
               <ImageIcon size={18} />
             </div>
             <span className="text-sm font-medium">Image</span>
           </li>
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-orange-500 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-orange-500 shadow-sm rounded-xl">
               <VideoIcon size={18} />
             </div>
             <span className="text-sm">Video</span>
           </li>
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-blue-500 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-blue-500 shadow-sm rounded-xl">
               <Zap size={18} />
             </div>
             <span className="text-sm">Realtime</span>
           </li>
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-black shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-black shadow-sm rounded-xl">
               <RefreshCcw size={18} />
             </div>
             <span className="text-sm">Motion Transfer</span>
           </li>
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-gray-700 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-gray-700 shadow-sm rounded-xl">
               <Box size={18} />
             </div>
             <span className="text-sm">3D Objects</span>
@@ -71,28 +71,28 @@ const HoverCard: React.FC<HoverProps> = ({ setIsHoveringHome }) => {
 
       {/* Edit Column */}
       <div>
-        <h3 className="text-gray-500 font-semibold mb-3">Edit</h3>
+        <h3 className="mb-3 font-semibold text-gray-500">Edit</h3>
         <ul className="space-y-2">
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-yellow-500 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-yellow-500 shadow-sm rounded-xl">
               <Sparkles size={18} />
             </div>
             <span className="text-sm">Enhancer</span>
           </li>
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-purple-500 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-purple-500 shadow-sm rounded-xl">
               <Pencil size={18} />
             </div>
             <span className="text-sm">Edit</span>
           </li>
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-teal-500 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-teal-500 shadow-sm rounded-xl">
               <Edit size={18} />
             </div>
             <span className="text-sm">Video Lipsync</span>
           </li>
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-red-500 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-red-500 shadow-sm rounded-xl">
               <Scissors size={18} />
             </div>
             <span className="text-sm">Video Restyle</span>
@@ -102,22 +102,22 @@ const HoverCard: React.FC<HoverProps> = ({ setIsHoveringHome }) => {
 
       {/* Assets Column */}
       <div>
-        <h3 className="text-gray-500 font-semibold mb-3">Assets</h3>
+        <h3 className="mb-3 font-semibold text-gray-500">Assets</h3>
         <ul className="space-y-2">
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-orange-800 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-orange-800 shadow-sm rounded-xl">
               <Database size={18} />
             </div>
             <span className="text-sm">Train</span>
           </li>
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-blue-800 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-blue-800 shadow-sm rounded-xl">
               <Folder size={18} />
             </div>
             <span className="text-sm">Assets</span>
           </li>
-          <li className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-            <div className="p-3 flex items-center justify-center rounded-xl bg-green-500 shadow-sm text-white">
+          <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
+            <div className="flex items-center justify-center p-3 text-white bg-green-500 shadow-sm rounded-xl">
               <Files size={18} />
             </div>
             <span className="text-sm">Gallery</span>

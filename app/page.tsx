@@ -1,7 +1,12 @@
-import Motion from "@/app/_components/Motion";
+import React from "react";
+import Home from "./home/page";
 
 const page = () => {
-  return <Motion>Home</Motion>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 };
 
 export default page;
