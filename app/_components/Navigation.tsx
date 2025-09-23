@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { GoHomeFill } from "react-icons/go";
 import { BsFillCreditCardFill, BsImage } from "react-icons/bs";
@@ -15,19 +15,22 @@ import { PiCompassTool } from "react-icons/pi";
 import { FaDiscord, FaFolder } from "react-icons/fa";
 import { RiSettings4Fill } from "react-icons/ri";
 import { LuLogOut } from "react-icons/lu";
-import { ImageIcon, Headset, Bell, SunDim } from "lucide-react";
+import { ImageIcon, Headset, Bell } from "lucide-react";
 
 import HoverCard from "@/app/_components/HoverCard";
 import Logo from "@/app/_components/Logo";
 import Avatar from "@/app/_components/ui/Avatar";
 import { useDarkMode } from "@/app/_context/useDarkMode";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
+import { VscLayoutSidebarRight } from "react-icons/vsc";
+import { FaXmark } from "react-icons/fa6";
 
 const Navigation = () => {
   const pathname = usePathname();
   const [isHoveringHome, setIsHoveringHome] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const navItems = [
     { route: "/", icon: GoHomeFill, name: "Home" },
@@ -53,15 +56,24 @@ const Navigation = () => {
       <div className="flex items-center justify-between w-full px-4 py-3 bg-white dark:bg-black md:px-6 lg:py-2 lg:bg-transparent">
         {/* Left Section */}
         <div className="flex items-center gap-8">
-          <motion.div className="flex items-center justify-center gap-8 ">
+          <motion.div className="items-center justify-center hidden gap-8 lg:flex">
             <Logo />
             <div className="relative">
-              <div className="items-center hidden space-x-3 cursor-pointer lg:flex">
+              <div className="flex items-center space-x-3 cursor-pointer">
                 <Avatar />
                 <p className="text-[1rem] font-normal">henrydave812</p>
               </div>
             </div>
           </motion.div>
+
+          <motion.button
+            type="button"
+            title="Menu"
+            className="text-2xl"
+            onClick={() => setIsMobileNavOpen(true)}
+          >
+            <VscLayoutSidebarRight />
+          </motion.button>
         </div>
 
         {/* Middle nav */}
@@ -91,7 +103,6 @@ const Navigation = () => {
                     >
                       <item.icon size={17} />
 
-                      {/* Tooltip for non-home icons */}
                       {!isHome && (
                         <div
                           className={`absolute -bottom-7 left-1/2 -translate-x-1/2 bg-gray-100 dark:bg-[#1c1c1c] px-2 flex justify-center items-center text-[.8rem] font-medium rounded-xl transition-opacity duration-300 opacity-0 group-hover:opacity-100`}
@@ -187,11 +198,70 @@ const Navigation = () => {
         </div>
       </div>
 
-      {isHoveringHome && (
+      {isHoveringHome && window.innerWidth > 500 && (
         <div className="fixed -top-[.7%] left-0 right-0  w-full flex justify-center items-center  ">
           <HoverCard setIsHoveringHome={setIsHoveringHome} />
         </div>
       )}
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isMobileNavOpen && (
+          <>
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-40 bg-black"
+              onClick={() => setIsMobileNavOpen(false)}
+            />
+
+            <motion.div
+              key="sidebar"
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="fixed top-0 bottom-0 left-0 z-50 flex flex-col bg-white border-r md:w-[70%] w-96 dark:bg-black "
+            >
+              <div className="flex items-center justify-between p-4 border-b ">
+                <Logo />
+                <button onClick={() => setIsMobileNavOpen(false)} className="">
+                  <FaXmark />
+                </button>
+              </div>
+              <nav className="flex-1 p-4 space-y-2">
+                {navItems.map((item, index) => {
+                  const isActive = pathname === item.route;
+
+                  return (
+                    <>
+                      <div key={index} className="relative">
+                        <Link href={item.route}>
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => setIsMobileNavOpen(true)}
+                            className={`group w-full flex gap-4 relative p-3 px-5 rounded-2xl transition-colors  ${
+                              isActive &&
+                              "bg-black dark:bg-white text-white dark:text-black shadow-sm"
+                            }`}
+                          >
+                            <item.icon size={25} />
+                            {item.name}
+                          </motion.button>
+                        </Link>
+                      </div>
+                    </>
+                  );
+                })}
+              </nav>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
