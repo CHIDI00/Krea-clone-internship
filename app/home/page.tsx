@@ -2,8 +2,11 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { Button } from "@/app/_components/ui/button";
+
 import HeroImage from "@/public/heroimage.jpg";
 import openHero from "@/public/openhero.jpg";
 import soft from "@/public/soft.png";

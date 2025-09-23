@@ -1,10 +1,10 @@
 import Image from "next/image";
-import React from "react";
+
 import avatar from "@/public/avatar.jpeg";
 
 const Avatar = () => {
   return (
-    <div className=" hover:bg-gray-200 transition-all duration-300 cursor-pointer p-[1.5px] rounded-lg">
+    <div>
       <Image
         src={avatar}
         alt="User Avatar"

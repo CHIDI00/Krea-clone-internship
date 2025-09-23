@@ -16,14 +16,15 @@ import { FaDiscord, FaFolder } from "react-icons/fa";
 import { RiSettings4Fill } from "react-icons/ri";
 import { LuLogOut } from "react-icons/lu";
 import { ImageIcon, Headset, Bell } from "lucide-react";
+import { IoMdMoon, IoMdSunny } from "react-icons/io";
+import { VscLayoutSidebarRight } from "react-icons/vsc";
+import { FaXmark } from "react-icons/fa6";
+
+import { useDarkMode } from "@/app/_context/useDarkMode";
 
 import HoverCard from "@/app/_components/HoverCard";
 import Logo from "@/app/_components/Logo";
 import Avatar from "@/app/_components/ui/Avatar";
-import { useDarkMode } from "@/app/_context/useDarkMode";
-import { IoMdMoon, IoMdSunny } from "react-icons/io";
-import { VscLayoutSidebarRight } from "react-icons/vsc";
-import { FaXmark } from "react-icons/fa6";
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -53,7 +54,7 @@ const Navigation = () => {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 w-full"
     >
-      <div className="flex items-center justify-between w-full px-4 py-3 bg-white dark:bg-black md:px-6 lg:py-2 lg:bg-transparent">
+      <div className="flex items-center justify-between w-full px-4 py-3 bg-white lg:dark:bg-transparent dark:bg-black md:px-6 lg:py-2 lg:bg-transparent">
         {/* Left Section */}
         <div className="flex items-center gap-8">
           <motion.div className="items-center justify-center hidden gap-8 lg:flex">
@@ -69,7 +70,7 @@ const Navigation = () => {
           <motion.button
             type="button"
             title="Menu"
-            className="text-2xl"
+            className="block text-2xl lg:hidden"
             onClick={() => setIsMobileNavOpen(true)}
           >
             <VscLayoutSidebarRight />
@@ -152,6 +153,7 @@ const Navigation = () => {
             <motion.div
               whileHover={{ scale: 1 }}
               onClick={() => handleDropDown()}
+              className=" hover:bg-gray-200 hover:dark:bg-[#1c1c1c] transition-all duration-300 cursor-pointer p-[1.5px] rounded-lg"
             >
               <Avatar />
             </motion.div>
@@ -162,32 +164,32 @@ const Navigation = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -10, scale: 0.95 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="absolute w-48 p-1 mt-2 overflow-hidden bg-white dark:bg-[#1c1c1c] rounded-lg shadow-md top-12 right-6 "
+                className="absolute w-48 p-1 mt-2 overflow-hidden bg-white rounded-lg shadow-md dark:bg-black top-12 right-6 "
               >
                 <Link
                   href=""
-                  className="flex items-center w-full px-2 py-2 space-x-3 text-left transition-colors rounded-lg hover:bg-gray-100"
+                  className="flex items-center w-full px-2 py-2 space-x-3 text-left transition-colors rounded-lg hover:bg-gray-100 hover:dark:bg-[#1c1c1c]"
                 >
                   <RiSettings4Fill />
                   <span>Manage Account</span>
                 </Link>
                 <Link
                   href="/"
-                  className="flex items-center w-full px-2 py-2 space-x-3 transition-colors rounded-lg hover:bg-gray-100"
+                  className="flex items-center w-full px-2 py-2 space-x-3 transition-colors rounded-lg hover:bg-gray-100 hover:dark:bg-[#1c1c1c]"
                 >
                   <BsFillCreditCardFill />
                   <span>Plans & Pricing</span>
                 </Link>
                 <Link
                   href="/"
-                  className="flex items-center w-full px-2 py-2 space-x-3 transition-colors rounded-lg hover:bg-gray-100"
+                  className="flex items-center w-full px-2 py-2 space-x-3 transition-colors rounded-lg hover:bg-gray-100 hover:dark:bg-[#1c1c1c]"
                 >
                   <FaDiscord />
                   <span>Join community</span>
                 </Link>
                 <Link
                   href="/"
-                  className="flex items-center w-full px-2 py-2 space-x-3 transition-colors rounded-lg hover:bg-gray-100"
+                  className="flex items-center w-full px-2 py-2 space-x-3 transition-colors rounded-lg hover:bg-gray-100 hover:dark:bg-[#1c1c1c]"
                 >
                   <LuLogOut />
                   <span>Logout</span>
@@ -211,10 +213,10 @@ const Navigation = () => {
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-40 bg-black"
+              className="fixed inset-0 z-40 bg-[#ffffff00] dark:bg-black/30 backdrop-blur-sm"
               onClick={() => setIsMobileNavOpen(false)}
             />
 
@@ -224,7 +226,7 @@ const Navigation = () => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed top-0 bottom-0 left-0 z-50 flex flex-col bg-white border-r md:w-[70%] w-96 dark:bg-black "
+              className="fixed top-0 bottom-0 left-0 z-50 flex flex-col bg-white border-r md:w-[70%] w-[80%] dark:bg-black "
             >
               <div className="flex items-center justify-between p-4 border-b ">
                 <Logo />

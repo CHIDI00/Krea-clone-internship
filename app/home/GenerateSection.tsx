@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import { BsPersonArmsUp, BsImage } from "react-icons/bs";
 import { TiVideo } from "react-icons/ti";
 import { ImMagicWand } from "react-icons/im";
