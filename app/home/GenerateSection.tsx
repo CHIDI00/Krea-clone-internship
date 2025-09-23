@@ -1,22 +1,9 @@
 import { motion } from "framer-motion";
-import {
-  Image,
-  Video,
-  Zap,
-  Edit,
-  Mic,
-  Shuffle,
-  Sparkles,
-  Brain,
-} from "lucide-react";
-import { BsFillCreditCardFill, BsPersonArmsUp } from "react-icons/bs";
+import { BsPersonArmsUp, BsImage } from "react-icons/bs";
 import { TiVideo } from "react-icons/ti";
 import { ImMagicWand } from "react-icons/im";
 import { IoPencil } from "react-icons/io5";
 import { PiCompassTool, PiMicrophoneStageFill } from "react-icons/pi";
-import { FaDiscord, FaFolder } from "react-icons/fa";
-import { RiSettings4Fill } from "react-icons/ri";
-import { LuLogOut } from "react-icons/lu";
 import { Button } from "@/app/_components/ui/button";
 import { GiBrain } from "react-icons/gi";
 import { BiChevronDown } from "react-icons/bi";
@@ -24,7 +11,7 @@ import { BiChevronDown } from "react-icons/bi";
 const GenerateSection = () => {
   const tools = [
     {
-      icon: Image,
+      icon: BsImage,
       title: "Image",
       description: "Generate images with custom styles in Flux and Ideogram.",
       isNew: true,
@@ -119,7 +106,7 @@ const GenerateSection = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="px-6 py-20"
+      className="px-2 pt-20 md:pt-0 md:py-20 md:px-6"
     >
       <div className="flex items-center justify-between mb-8">
         <motion.h2
@@ -139,16 +126,16 @@ const GenerateSection = () => {
 
       <motion.div
         variants={containerVariants}
-        className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4"
+        className="grid grid-cols-1 md:gap-4 md:grid-cols-2 lg:grid-cols-4"
       >
-        {tools.map((tool, index) => (
+        {tools.map((tool) => (
           <motion.div key={tool.title} variants={itemVariants}>
-            <div className="relative overflow-hidden transition-all duration-300 cursor-pointer group bg-card border-border hover:border-primary/20">
+            <div className="relative overflow-hidden transition-all duration-300 cursor-pointer group ">
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="flex items-center justify-center gap-2 p-4">
+                <div className="flex items-center justify-between p-4 md:gap-2 md:justify-center">
                   <div className="flex items-start gap-3 mb-3">
                     <div
                       className={`p-3 rounded-2xl ${tool.bgColor} group-hover:scale-110 transition-transform duration-300 text-white`}

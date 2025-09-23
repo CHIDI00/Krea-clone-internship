@@ -24,7 +24,6 @@ const Home = () => {
       buttonText: "Try WAN 2.2",
       badge: "NEW IMAGE MODEL",
       image: HeroImage,
-      gradient: "from-primary/20 to-transparent",
     },
     {
       id: 2,
@@ -35,7 +34,6 @@ const Home = () => {
       buttonText: "Download Model",
       badge: "OPEN IMAGE MODEL",
       image: openHero,
-      gradient: "from-tool-video/20 to-transparent",
     },
   ];
 
@@ -49,7 +47,6 @@ const Home = () => {
       buttonText: "Download Model",
       badge: "OPEN IMAGE MODEL",
       image: soft,
-      // gradient: "from-tool-video/20 to-transparent",
     },
     {
       id: 2,
@@ -60,7 +57,6 @@ const Home = () => {
       buttonText: "Try WAN 2.2",
       badge: "NEW IMAGE MODEL",
       image: roadTrip,
-      // gradient: "from-primary/20 to-transparent",
     },
   ];
 
@@ -77,11 +73,12 @@ const Home = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="relative flex flex-col gap-4 px-6 py-8"
+      className="relative flex flex-col gap-4 px-4 md:py-8 md:px-6"
     >
-      <div className="relative flex gap-4">
-        <div className="h-[400px] w-1/2">
-          <div className="relative w-full h-full overflow-hidden rounded-2xl">
+      <div className="relative flex flex-col gap-4 lg:flex-row">
+        {/* Left Slide  */}
+        <div className="h-[250px] md:h-[400px] lg:w-1/2 w-full">
+          <div className="relative w-full h-full overflow-hidden rounded-lg md:rounded-2xl">
             <AnimatePresence mode="wait">
               {slide1.map(
                 (slide, index) =>
@@ -94,9 +91,8 @@ const Home = () => {
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                       className="grid flex-shrink-0 w-full h-full grid-cols-1 gap-3 "
                     >
-                      {/* Current Slide - Left */}
                       <motion.div
-                        className="relative w-full overflow-hidden cursor-pointer rounded-2xl bg-gradient-to-br from-card to-muted group"
+                        className="relative w-full overflow-hidden rounded-lg cursor-pointer md:rounded-2xl bg-gradient-to-br from-card to-muted group"
                         style={{
                           backgroundImage: ` url(${slide.image.src})`,
                           backgroundSize: "cover",
@@ -106,7 +102,7 @@ const Home = () => {
                         transition={{ duration: 0.3 }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
-                        <div className="relative flex flex-col justify-between h-full p-8">
+                        <div className="relative flex flex-col justify-between h-full p-4 md:p-8">
                           <div className="text-white w-fit backdrop-blur-sm">
                             {slide.badge}
                           </div>
@@ -116,7 +112,7 @@ const Home = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="mb-6 font-bold text-center text-white text-7xl"
+                                className="text-3xl font-bold text-left text-white md:text-center md:mb-6 md:text-7xl"
                               >
                                 {slide.title}
                               </motion.h2>
@@ -124,7 +120,7 @@ const Home = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="mb-3 text-xl font-semibold text-white/90"
+                                className="mb-3 font-semibold text-md text-white/90"
                               >
                                 {slide.subtitle}
                               </motion.h3>
@@ -132,7 +128,7 @@ const Home = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="leading-relaxed text-white/80"
+                                className="text-sm leading-tight md:leading-relaxed text-white/80"
                               >
                                 {slide.description}
                               </motion.p>
@@ -173,8 +169,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="h-[400px] w-1/2">
-          <div className="relative w-full h-full overflow-hidden rounded-2xl">
+        {/* Right Slide  */}
+        <div className="h-[250px] md:h-[400px] lg:w-1/2 w-full">
+          <div className="relative w-full h-full overflow-hidden rounded-lg md:rounded-2xl">
             <AnimatePresence mode="wait">
               {slide2.map(
                 (slide, index) =>
@@ -187,9 +184,8 @@ const Home = () => {
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                       className="grid flex-shrink-0 w-full h-full grid-cols-1 gap-3 "
                     >
-                      {/* Current Slide - Left */}
                       <motion.div
-                        className="relative w-full overflow-hidden cursor-pointer rounded-2xl bg-gradient-to-br from-card to-muted group"
+                        className="relative w-full overflow-hidden rounded-lg cursor-pointer md:rounded-2xl bg-gradient-to-br from-card to-muted group"
                         style={{
                           backgroundImage: ` url(${slide.image.src})`,
                           backgroundSize: "cover",
@@ -199,7 +195,7 @@ const Home = () => {
                         transition={{ duration: 0.3 }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
-                        <div className="relative flex flex-col justify-between h-full p-8">
+                        <div className="relative flex flex-col justify-between h-full p-4 md:p-8">
                           <div className="text-white w-fit backdrop-blur-sm">
                             {slide.badge}
                           </div>
@@ -209,7 +205,7 @@ const Home = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="mb-6 font-bold text-center text-white text-7xl"
+                                className="text-3xl font-bold text-left text-white lg:mb-6 md:text-center md:text-7xl"
                               >
                                 {slide.title}
                               </motion.h2>
@@ -217,7 +213,7 @@ const Home = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="mb-3 text-xl font-semibold text-white/90"
+                                className="mb-3 font-semibold text-md md:text-xl text-white/90"
                               >
                                 {slide.subtitle}
                               </motion.h3>
@@ -225,7 +221,7 @@ const Home = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="leading-relaxed text-white/80"
+                                className="text-sm leading-tight md:leading-relaxed text-white/80"
                               >
                                 {slide.description}
                               </motion.p>

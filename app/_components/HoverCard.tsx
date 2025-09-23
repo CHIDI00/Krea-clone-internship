@@ -1,20 +1,13 @@
-// components/HoverCard.jsx
-import {
-  Image as ImageIcon,
-  Video as VideoIcon,
-  Zap,
-  RefreshCcw,
-  Box,
-  Pencil,
-  Sparkles,
-  Edit,
-  Scissors,
-  Files,
-  Folder,
-  Database,
-} from "lucide-react";
+import { Box, Scissors, Files } from "lucide-react";
+import { BsPersonArmsUp, BsImage } from "react-icons/bs";
+import { TiVideo } from "react-icons/ti";
+import { ImMagicWand } from "react-icons/im";
+import { IoPencil } from "react-icons/io5";
+import { PiCompassTool, PiMicrophoneStageFill } from "react-icons/pi";
+import { GiBrain } from "react-icons/gi";
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
+import { FaFolder } from "react-icons/fa";
 
 interface HoverProps {
   setIsHoveringHome: Dispatch<SetStateAction<boolean>>;
@@ -38,25 +31,25 @@ const HoverCard: React.FC<HoverProps> = ({ setIsHoveringHome }) => {
         <ul className="space-y-2">
           <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
             <div className="flex items-center justify-center p-3 text-white shadow-sm rounded-xl bg-gradient-to-b from-slate-500 via-gray-400 to-white">
-              <ImageIcon size={18} />
+              <BsImage size={18} />
             </div>
             <span className="text-sm font-medium">Image</span>
           </li>
           <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
-            <div className="flex items-center justify-center p-3 text-white bg-orange-500 shadow-sm rounded-xl">
-              <VideoIcon size={18} />
+            <div className="flex items-center justify-center p-3 text-white bg-yellow-500 shadow-sm rounded-xl">
+              <TiVideo size={18} />
             </div>
             <span className="text-sm">Video</span>
           </li>
           <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
-            <div className="flex items-center justify-center p-3 text-white bg-blue-500 shadow-sm rounded-xl">
-              <Zap size={18} />
+            <div className="flex items-center justify-center p-3 text-white shadow-sm bg-gradient-to-b from-blue-500 via-blue-400 to-white rounded-xl">
+              <IoPencil size={18} />
             </div>
             <span className="text-sm">Realtime</span>
           </li>
           <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
             <div className="flex items-center justify-center p-3 text-white bg-black shadow-sm rounded-xl">
-              <RefreshCcw size={18} />
+              <BsPersonArmsUp size={18} />
             </div>
             <span className="text-sm">Motion Transfer</span>
           </li>
@@ -74,20 +67,20 @@ const HoverCard: React.FC<HoverProps> = ({ setIsHoveringHome }) => {
         <h3 className="mb-3 font-semibold text-gray-500">Edit</h3>
         <ul className="space-y-2">
           <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
-            <div className="flex items-center justify-center p-3 text-white bg-yellow-500 shadow-sm rounded-xl">
-              <Sparkles size={18} />
+            <div className="flex items-center justify-center p-3 text-white shadow-sm bg-gradient-to-b from-black via-black/90 to-black/40 rounded-xl">
+              <ImMagicWand size={18} />
             </div>
             <span className="text-sm">Enhancer</span>
           </li>
           <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
-            <div className="flex items-center justify-center p-3 text-white bg-purple-500 shadow-sm rounded-xl">
-              <Pencil size={18} />
+            <div className="flex items-center justify-center p-3 text-white shadow-sm bg-gradient-to-b from-purple-900 via-purple-800 to-purple-400 rounded-xl">
+              <PiCompassTool size={18} />
             </div>
             <span className="text-sm">Edit</span>
           </li>
           <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
-            <div className="flex items-center justify-center p-3 text-white bg-teal-500 shadow-sm rounded-xl">
-              <Edit size={18} />
+            <div className="flex items-center justify-center p-3 text-white shadow-sm bg-gradient-to-b from-green-900 via-green-800 to-green-400 rounded-xl">
+              <PiMicrophoneStageFill size={18} />
             </div>
             <span className="text-sm">Video Lipsync</span>
           </li>
@@ -106,13 +99,13 @@ const HoverCard: React.FC<HoverProps> = ({ setIsHoveringHome }) => {
         <ul className="space-y-2">
           <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
             <div className="flex items-center justify-center p-3 text-white bg-orange-800 shadow-sm rounded-xl">
-              <Database size={18} />
+              <GiBrain size={18} />
             </div>
             <span className="text-sm">Train</span>
           </li>
           <li className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-50">
             <div className="flex items-center justify-center p-3 text-white bg-blue-800 shadow-sm rounded-xl">
-              <Folder size={18} />
+              <FaFolder size={18} />
             </div>
             <span className="text-sm">Assets</span>
           </li>

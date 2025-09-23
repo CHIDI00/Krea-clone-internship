@@ -1,14 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ImageIcon, Headset, Bell, SunDim } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import HoverCard from "./HoverCard";
-import Logo from "./Logo";
 
-import Avatar from "./ui/Avatar";
+import { motion } from "framer-motion";
+
 import { GoHomeFill } from "react-icons/go";
 import { BsFillCreditCardFill, BsImage } from "react-icons/bs";
 import { TiVideo } from "react-icons/ti";
@@ -18,6 +15,11 @@ import { PiCompassTool } from "react-icons/pi";
 import { FaDiscord, FaFolder } from "react-icons/fa";
 import { RiSettings4Fill } from "react-icons/ri";
 import { LuLogOut } from "react-icons/lu";
+import { ImageIcon, Headset, Bell, SunDim } from "lucide-react";
+
+import HoverCard from "@/app/_components/HoverCard";
+import Logo from "@/app/_components/Logo";
+import Avatar from "@/app/_components/ui/Avatar";
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -45,13 +47,13 @@ const Navigation = () => {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 w-full"
     >
-      <div className="flex items-center justify-between w-full px-6 py-2">
+      <div className="flex items-center justify-between w-full px-4 py-3 bg-white md:px-6 lg:py-2 lg:bg-transparent">
         {/* Left Section */}
         <div className="flex items-center gap-8">
           <motion.div className="flex items-center justify-center gap-8 ">
             <Logo />
             <div className="relative">
-              <div className="flex items-center space-x-3 cursor-pointer">
+              <div className="items-center hidden space-x-3 cursor-pointer lg:flex">
                 <Avatar />
                 <p className="text-[1rem] font-normal">henrydave812</p>
               </div>
@@ -60,7 +62,7 @@ const Navigation = () => {
         </div>
 
         {/* Middle nav */}
-        <div className="flex justify-center items-center p-[6px] bg-gray-100 rounded-2xl z-50 ml-16 ">
+        <div className="hidden lg:flex justify-center items-center p-[6px] bg-gray-100 rounded-2xl z-50 ml-16 ">
           {navItems.map((item, index) => {
             const isActive = pathname === item.route;
             const isHome = item.route === "/";
@@ -104,14 +106,14 @@ const Navigation = () => {
         <div className="flex items-center gap-3">
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 px-2 py-1 font-medium transition-colors bg-gray-100 justify-ceter rounded-xl"
+            className="items-center hidden gap-2 px-2 py-1 font-medium transition-colors bg-gray-100 lg:flex justify-ceter rounded-xl"
           >
             <ImageIcon size={17} />
             Gallery
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 px-2 py-1 font-medium transition-colors bg-gray-100 justify-ceter rounded-xl"
+            className="items-center hidden gap-2 px-2 py-1 font-medium transition-colors bg-gray-100 lg:flex justify-ceter rounded-xl"
           >
             <Headset size={17} />
             Support
@@ -120,7 +122,7 @@ const Navigation = () => {
           <div className="flex items-center gap-3">
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-2 p-2 font-medium transition-colors bg-gray-100 rounded-lg justify-ceter"
+              className="items-center hidden gap-2 p-2 font-medium transition-colors bg-gray-100 rounded-lg lg:flex justify-ceter"
             >
               <Bell size={17} />
             </motion.button>
