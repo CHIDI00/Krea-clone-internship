@@ -246,11 +246,11 @@ const Home = () => {
             </AnimatePresence>
           </div>
 
-          <div className="flex justify-end gap-2 mt-6">
+          <div className="flex justify-end gap-2 mt-3">
             <Button
               variant="ghost"
               size="icon"
-              className="text-black bg-gray-100 rounded-full backdrop-blur-sm border-background/30 hover:bg-background/30"
+              className="text-black dark:text-white bg-gray-100 dark:bg-[#181818] hover:bg-white hover:dark:bg-black rounded-full backdrop-blur-sm border-background/30"
               onClick={prevSlide}
             >
               <ChevronLeft className="w-5 h-5" />
@@ -258,7 +258,7 @@ const Home = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-black bg-gray-100 rounded-full backdrop-blur-sm border-background/30 hover:bg-background/30"
+              className="text-black dark:text-white bg-gray-100 dark:bg-[#181818] hover:bg-white hover:dark:bg-black rounded-full backdrop-blur-sm border-background/30"
               onClick={nextSlide}
             >
               <ChevronRight className="w-5 h-5" />

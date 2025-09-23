@@ -20,8 +20,8 @@ const HoverCard: React.FC<HoverProps> = ({ setIsHoveringHome }) => {
       animate={{ opacity: 1, y: 10 }}
       exit={{ opacity: 0, y: 10 }}
       transition={{ duration: 0.2 }}
-      className=" p-6 pt-16 bg-white rounded-2xl
- border-2 border-gray-200 grid grid-cols-3 gap-6 w-[60%] card-sh"
+      className=" p-6 pt-16 bg-white dark:bg-[#181818]  rounded-2xl
+ border-2 border-gray-200 dark:border-[#272727] grid grid-cols-3 gap-6 w-[60%] card-sh"
       onMouseLeave={() => {
         setIsHoveringHome(false);
       }}
@@ -117,7 +117,6 @@ const HoverCard: React.FC<HoverProps> = ({ setIsHoveringHome }) => {
           </li>
         </ul>
       </div>
-      {/* </div> */}
     </motion.div>
   );
 };

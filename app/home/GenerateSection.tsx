@@ -169,7 +169,7 @@ const GenerateSection = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full transition-all duration-300 bg-gray-100 rounded-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
+                      className="w-full text-black transition-all duration-300 bg-gray-100 rounded-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
                     >
                       Open
                     </Button>
