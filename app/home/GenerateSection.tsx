@@ -136,7 +136,7 @@ const GenerateSection = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="flex items-center justify-between p-4 md:gap-2 md:justify-center">
+                <div className="flex items-center justify-between p-0 py-4 lg:p-4 md:gap-2 md:justify-center">
                   <div className="flex items-start gap-3 mb-3">
                     <div
                       className={`p-3 rounded-2xl ${tool.bgColor} group-hover:scale-110 transition-transform duration-300 text-white`}
