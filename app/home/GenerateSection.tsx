@@ -106,7 +106,7 @@ const GenerateSection = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="px-2 pt-20 md:pt-0 md:py-20 md:px-6"
+      className="px-2 pt-20 md:py-20 md:px-6"
     >
       <div className="flex items-center justify-between mb-8">
         <motion.h2
