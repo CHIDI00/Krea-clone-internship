@@ -22,6 +22,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Krea AI",
   description: "Built with ❤ by CHiDI",
+  icons: {
+    icon: "/kreaLogo.png",
+  },
 };
 
 export default function RootLayout({
