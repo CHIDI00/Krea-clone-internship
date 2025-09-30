@@ -86,7 +86,7 @@ const Navigation = () => {
             return (
               <>
                 <div
-                  key={index}
+                  key={item.name}
                   className="relative"
                   onMouseEnter={() => {
                     if (isHome) setIsHoveringHome(true);

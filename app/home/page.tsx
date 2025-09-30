@@ -76,9 +76,9 @@ const Home = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="relative flex flex-col gap-4 px-4 md:py-8 md:px-6"
+      className="relative flex flex-col gap-4  md:py-8 overflow-hidden"
     >
-      <div className="relative flex flex-col gap-4 lg:flex-row">
+      <div className="relative flex flex-col gap-4 lg:flex-row md:px-6 px-4">
         {/* Left Slide  */}
         <div className="h-[250px] md:h-[400px] lg:w-1/2 w-full">
           <div className="relative w-full h-full overflow-hidden rounded-lg md:rounded-2xl">

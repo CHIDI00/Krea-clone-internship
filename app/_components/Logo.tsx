@@ -15,7 +15,7 @@ const Logo = () => {
         src={isDarkMode ? kreaWhite : kreaBlack}
         width="15"
         height="15"
-        quality={100}
+        quality={90}
         alt="Krea Ai logo"
       />
     </Link>
